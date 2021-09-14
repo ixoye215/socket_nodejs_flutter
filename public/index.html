@@ -22,10 +22,18 @@
             console.log('Perdimos comunicacion con el servidor');
         });
 
-        socket.emit('mensaje', {nombre: 'Brayan'});
+        // socket.emit('mensaje', {nombre: 'Brayan'});
 
         socket.on('mensaje', (payload)=>{
             console.log('Escuchando', payload);
+        });
+
+        socket.on('nuevo-mensaje', (payload)=>{
+            console.log('Escuchando', payload);
+        });
+
+        socket.on('active-bands', (payload)=>{
+            console.table(payload);
         });
 
 
